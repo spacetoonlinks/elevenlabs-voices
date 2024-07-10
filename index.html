@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .voice-info {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        audio:hover, audio:focus, audio:active {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <p><strong>Preview:</strong></p>
+        <audio controls id="voice-preview">
+            Your browser does not support the audio element.
+        </audio>
+    <h2>Select a Voice:</h2>
+    <select id="voice-select" onchange="loadVoiceInfo()">
+        <option value="">Select a voice...</option>
+    </select>
+
+    <div id="voice-info" class="voice-info">
+        <h3>Voice Information</h3>
+        <p><strong>Voice ID:</strong> <span id="voice-id"></span></p>
+        <p><strong>Name:</strong> <span id="voice-name"></span></p>
+        <p><strong>Category:</strong> <span id="voice-category"></span></p>
+        <p><strong>Labels:</strong></p>
+        <table id="labels-table">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="labels-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://rawcdn.githack.com/s201817571/hosting/615f79a57ece14e9d0fddf0bdc9290304743756f/elevenlabs_docs_voices_premade_voices.js"></script>
+    
+</body>
+</html>
